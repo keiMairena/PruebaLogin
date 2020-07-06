@@ -41,12 +41,12 @@ namespace PruebaLogin
             myMessage.HtmlContent = message.Body;
 
             var credentials = new NetworkCredential(
-                       ConfigurationManager.AppSettings["mailAccount"],
-                       ConfigurationManager.AppSettings["mailPassword"]
+                       ConfigurationManager.AppSettings["emailAccount"],
+                       ConfigurationManager.AppSettings["emailPassword"]
                        );
 
             // Create a Web transport for sending email.
-            var transportWeb = new Web(credentials);
+           /* var transportWeb = new Web(credentials);
 
             // Send the email.
             if (transportWeb != null)
@@ -57,7 +57,7 @@ namespace PruebaLogin
             {
                 Trace.TraceError("Failed to create Web transport.");
                 await Task.FromResult(0);
-            }
+            }*/
         }
     }
     public class SmsService : IIdentityMessageService
